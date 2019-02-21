@@ -1,0 +1,24 @@
+{
+  "docker": {
+    "packageRules": [
+      {
+        "packageNames": ["circleci/node", "node"],
+        "allowedVersions": "<11 || >11"
+      },
+      {
+        "packagePatterns": ["circleci/.+"],
+        "recreateClosed": true
+      }
+    ]
+  },
+  "extends": ["config:base", "docker:enableMajor"],
+  "labels": ["renovate"],
+  "packageRules": [
+    {
+      "automerge": true,
+      "depTypeList": ["devDependencies"]
+    }
+  ],
+  "schedule": ["after 7:00 before 19:00 every weekday"],
+  "timezone": "Europe/Berlin"
+}

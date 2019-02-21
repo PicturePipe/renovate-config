@@ -1,0 +1,41 @@
+{
+  "name": "renovate-config",
+  "version": "1.0.0",
+  "description": "Renovate preset config for PicturePipe projects.",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/PicturePipe/renovate-config.git"
+  },
+  "author": "reelport GmbH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PicturePipe/renovate-config/issues"
+  },
+  "homepage": "https://github.com/PicturePipe/renovate-config#readme",
+  "renovate-config": {
+    "default": {
+      "docker": {
+        "packageRules": [
+          {
+            "packageNames": ["circleci/node", "node"],
+            "allowedVersions": "<11 || >11"
+          },
+          {
+            "packagePatterns": ["circleci/.+"],
+            "recreateClosed": true
+          }
+        ]
+      },
+      "extends": ["config:base", "docker:enableMajor"],
+      "labels": ["renovate"],
+      "packageRules": [
+        {
+          "automerge": true,
+          "depTypeList": ["devDependencies"]
+        }
+      ],
+      "schedule": ["after 7:00 before 19:00 every weekday"],
+      "timezone": "Europe/Berlin"
+    }
+  }
+}

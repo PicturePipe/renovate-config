@@ -19,6 +19,9 @@
       "depTypeList": ["devDependencies"]
     }
   ],
+  "pip_requirements": {
+    "fileMatch": ["(^|/)requirements(\/*[\\w-]*).(txt|pip)$"]
+  },
   "schedule": ["after 7:00 before 19:00 every weekday"],
   "timezone": "Europe/Berlin"
 }

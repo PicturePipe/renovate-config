@@ -8,6 +8,10 @@
       {
         "packagePatterns": ["circleci/.+"],
         "recreateClosed": true
+      },
+      {
+        "packageNames": ["circleci/python", "python"],
+        "allowedVersions": "<3.8"
       }
     ]
   },
@@ -24,6 +28,5 @@
   },
   "rebaseStalePrs": false,
   "schedule": ["after 7:00 before 19:00 every weekday"],
-  "timezone": "Europe/Berlin",
-  "unstablePattern": "[\\d.]+[pbarc]+"
+  "timezone": "Europe/Berlin"
 }

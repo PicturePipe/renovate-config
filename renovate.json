@@ -11,11 +11,11 @@
       },
       {
         "packagenames": ["circleci/python", "python"],
-        "allowedversions": "<3.8"
+        "allowedversions": "<=3.7"
       },
       {
         "packagenames": ["traefik"],
-        "allowedversions": "<2.0"
+        "allowedversions": "<=1.7"
       }
     ]
   },

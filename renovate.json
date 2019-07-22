@@ -10,8 +10,12 @@
         "recreateClosed": true
       },
       {
-        "packageNames": ["circleci/python", "python"],
-        "allowedVersions": "<3.8"
+        "packagenames": ["circleci/python", "python"],
+        "allowedversions": "<3.8"
+      },
+      {
+        "packagenames": ["traefik"],
+        "allowedversions": "<2.0"
       }
     ]
   },

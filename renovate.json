@@ -10,11 +10,11 @@
         "recreateClosed": true
       },
       {
-        "packagenames": ["circleci/python", "python"],
+        "packageNames": ["circleci/python", "python"],
         "versionScheme": "pep440"
       },
       {
-        "packagenames": ["traefik"],
+        "packageNames": ["traefik"],
         "allowedVersions": "<=1.7"
       }
     ]

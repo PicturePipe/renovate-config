@@ -11,7 +11,7 @@
       },
       {
         "packageNames": ["circleci/python", "python"],
-        "versionScheme": "pep440"
+        "allowedVersions": "<=3.7"
       },
       {
         "packageNames": ["traefik"],

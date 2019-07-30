@@ -19,7 +19,11 @@
       }
     ]
   },
-  "extends": ["config:base", "docker:enableMajor"],
+  "extends": [
+    "config:base",
+    "default:automergeDigest",
+    "docker:enableMajor"
+  ],
   "labels": ["renovate"],
   "packageRules": [
     {
@@ -27,6 +31,7 @@
       "depTypeList": ["devDependencies"]
     }
   ],
+  "pinDigests": true,
   "pip_requirements": {
     "fileMatch": ["(^|/)requirements(\/*[\\w-]*).(txt|pip)$"]
   },

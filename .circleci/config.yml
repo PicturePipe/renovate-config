@@ -1,0 +1,19 @@
+version: 2.0
+
+jobs:
+  validate:
+    docker:
+      - image: renovate/renovate:19.19.1-slim@sha256:6b35b7505ef8d7200671e124fe810b5e75d874cd5e366f7b139a75a26827655d
+        environment:
+          RENOVATE_CONFIG_FILE: ~/renovate.json
+    steps:
+      - checkout
+      - run:
+          command: /usr/src/app/bin/config-validator.js
+          name: Validate renovate.json
+
+workflows:
+  version: 2
+  validate:
+    jobs:
+      - validate

@@ -1,8 +1,10 @@
 # PicturePipe Renovate Preset Config
 
 [![CircleCI Build][circleci-logo]](https://circleci.com/gh/PicturePipe/renovate-config "CircleCI Build")
+[![Renovate enabled][renovate-logo]](https://renovateapp.com/ "Renovate enabled")
 
 [circleci-logo]: https://circleci.com/gh/PicturePipe/renovate-config.svg?style=shield
+[renovate-logo]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg
 
 [Renovate](https://renovatebot.com/) preset config for PicturePipe projects.
 

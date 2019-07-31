@@ -1,5 +1,7 @@
 # PicturePipe Renovate Preset Config
 
+[![CircleCI Build](https://circleci.com/gh/PicturePipe/renovate-config.svg?style=shield)](https://circleci.com/gh/PicturePipe/renovate-config "CircleCI Build")
+
 [Renovate](https://renovatebot.com/) preset config for PicturePipe projects.
 
 ## Usage

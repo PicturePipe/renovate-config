@@ -13,6 +13,14 @@ following content:
 }
 ```
 
+## Config Validation
+
+If the preset config has been changed it should be validated:
+
+```console
+make validate
+```
+
 ## License
 
 Distributed under the MIT license.

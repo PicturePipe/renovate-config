@@ -3,7 +3,7 @@ version: 2.0
 jobs:
   validate:
     docker:
-      - image: renovate/renovate:19.38.4-slim@sha256:2199731a311342c37fc14dd204e8bfddbb72dfe479f2f06c60db476836449e9a
+      - image: renovate/renovate:19.38.6-slim@sha256:f448599ffc6a67971ed8e7c219e354a67bf6850daedec368c15587eba9e946ec
         environment:
           RENOVATE_CONFIG_FILE: ~/renovate.json
     steps:

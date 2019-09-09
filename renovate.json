@@ -39,7 +39,6 @@
     "fileMatch": ["(^|/)requirements(\/*[\\w-]*).(txt|pip)$"]
   },
   "prHourlyLimit": 3,
-  "rebaseStalePrs": false,
   "schedule": ["after 8:00 before 20:00 every weekday"],
   "timezone": "Europe/Berlin"
 }

@@ -29,12 +29,6 @@
     "docker:enableMajor"
   ],
   "labels": ["renovate"],
-  "packageRules": [
-    {
-      "automerge": true,
-      "depTypeList": ["devDependencies"]
-    }
-  ],
   "pip_requirements": {
     "fileMatch": ["(^|/)requirements(\/*[\\w-]*).(txt|pip)$"]
   },

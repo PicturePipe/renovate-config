@@ -16,6 +16,11 @@
       {
         "packageNames": ["traefik"],
         "allowedVersions": "<=1.7"
+      },
+      {
+        "extends": ["schedule:weekly"],
+        "packageNames": ["circleci/.+"],
+        "updateTypes": ["digest"]
       }
     ],
     "pinDigests": true,

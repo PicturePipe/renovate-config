@@ -2,20 +2,20 @@
   "docker": {
     "packageRules": [
       {
-        "packageNames": ["circleci/node", "node"],
-        "allowedVersions": "<11 || >11"
+        "allowedVersions": "<11 || >11",
+        "packageNames": ["circleci/node", "node"]
       },
       {
         "packagePatterns": ["circleci/.+"],
         "recreateClosed": true
       },
       {
-        "packageNames": ["circleci/python", "python"],
-        "allowedVersions": "<=3.7"
+        "allowedVersions": "<=3.7",
+        "packageNames": ["circleci/python", "python"]
       },
       {
-        "packageNames": ["traefik"],
-        "allowedVersions": "<=1.7"
+        "allowedVersions": "<=1.7",
+        "packageNames": ["traefik"]
       },
       {
         "extends": ["schedule:weekly"],

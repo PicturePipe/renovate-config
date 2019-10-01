@@ -18,8 +18,8 @@
         "packageNames": ["traefik"]
       },
       {
-        "extends": ["schedule:weekly"],
         "packagePatterns": ["circleci/.+"],
+        "schedule": ["after 4:00 before 8:00 on Monday"],
         "updateTypes": ["digest"]
       }
     ],

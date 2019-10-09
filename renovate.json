@@ -18,6 +18,10 @@
         "packageNames": ["traefik"]
       },
       {
+        "automerge": true,
+        "packageNames": ["renovate/renovate"]
+      },
+      {
         "packagePatterns": ["circleci/.+"],
         "schedule": ["after 4:00 before 8:00 on Monday"],
         "updateTypes": ["digest"]

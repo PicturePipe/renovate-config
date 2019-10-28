@@ -2,7 +2,7 @@
   "docker": {
     "packageRules": [
       {
-        "allowedVersions": "<11 || >11",
+        "allowedVersions": "<13 || >13",
         "packageNames": ["circleci/node", "node"]
       },
       {

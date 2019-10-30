@@ -10,7 +10,7 @@
         "recreateClosed": true
       },
       {
-        "allowedVersions": "<=3.7",
+        "allowedVersions": "<=3.8",
         "packageNames": ["circleci/python", "python"]
       },
       {

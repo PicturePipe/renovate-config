@@ -23,7 +23,10 @@
       },
       {
         "packagePatterns": ["circleci/.+"],
-        "schedule": ["on Monday after 22:00 before 6:00"],
+        "schedule": [
+          "on Monday after 22:00",
+          "on Monday before 6:00"
+        ],
         "updateTypes": ["digest"]
       }
     ],
@@ -42,6 +45,9 @@
     "fileMatch": ["(^|/)requirements(\/*[\\w-]*).(txt|pip)$"]
   },
   "rebaseStalePrs": false,
-  "schedule": ["every weekday after 22:00 before 6:00"],
+  "schedule": [
+    "every weekday after 22:00",
+    "every weekday before 6:00"
+  ],
   "timezone": "Europe/Berlin"
 }

@@ -17,7 +17,15 @@ commands:
           name: Validate << parameters.config-file >>
 
 jobs:
-  validate:
+  validate-json:
+    docker:
+      - image: circleci/buildpack-deps:stable-scm@sha256:f5c561e7c4b27d8085b2e423180e2ad17d62fa419f87e26482102c14957ecde8
+    steps:
+      - checkout
+      - run:
+          command: make validate-json
+          name: Validate JSON files
+  validate-presets:
     docker:
       - image: renovate/renovate:19.66.15-slim@sha256:f3e9888652060a11f42c32b03f272bfd462877b4164e682e86ca2f87d85ea9d0
     steps:
@@ -35,4 +43,7 @@ workflows:
   version: 2
   validate:
     jobs:
-      - validate
+      - validate-json
+      - validate-presets:
+          requires:
+            - validate-json

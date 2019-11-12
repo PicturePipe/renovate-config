@@ -23,10 +23,7 @@
       },
       {
         "packagePatterns": ["circleci/.+"],
-        "schedule": [
-          "on Monday after 22:00",
-          "on Monday before 6:00"
-        ],
+        "schedule": ["on Monday before 6:00"],
         "updateTypes": ["digest"]
       }
     ],

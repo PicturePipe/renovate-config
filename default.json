@@ -1,0 +1,46 @@
+{
+  "docker": {
+    "packageRules": [
+      {
+        "allowedVersions": "<13 || >13",
+        "packageNames": ["circleci/node", "node"]
+      },
+      {
+        "packagePatterns": ["circleci/.+"],
+        "recreateClosed": true
+      },
+      {
+        "allowedVersions": "<=3.8",
+        "packageNames": ["circleci/python", "python"]
+      },
+      {
+        "allowedVersions": "<=1.7",
+        "packageNames": ["traefik"]
+      },
+      {
+        "packagePatterns": ["circleci/.+"],
+        "schedule": ["on Monday before 6:00"],
+        "updateTypes": ["digest"]
+      }
+    ],
+    "pinDigests": true,
+    "pin": {
+      "automerge": true
+    }
+  },
+  "extends": [
+    "config:base",
+    "default:automergeDigest",
+    "docker:enableMajor"
+  ],
+  "labels": ["renovate"],
+  "pip_requirements": {
+    "fileMatch": ["(^|/)requirements(\/*[\\w-]*).(txt|pip)$"]
+  },
+  "rebaseStalePrs": false,
+  "schedule": [
+    "every weekday after 22:00",
+    "every weekday before 6:00"
+  ],
+  "timezone": "Europe/Berlin"
+}

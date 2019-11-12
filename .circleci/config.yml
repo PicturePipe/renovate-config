@@ -23,7 +23,7 @@ jobs:
     steps:
       - checkout
       - validate-preset:
-         config-file: /home/ubuntu/project/renovate.json
+         config-file: /home/ubuntu/project/default.json
 
 workflows:
   version: 2

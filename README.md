@@ -1,4 +1,4 @@
-# PicturePipe Renovate Preset Config
+# PicturePipe Renovate Config Presets
 
 [![CircleCI Build][circleci-logo]](https://circleci.com/gh/PicturePipe/renovate-config "CircleCI Build")
 [![Renovate enabled][renovate-logo]](https://renovateapp.com/ "Renovate enabled")
@@ -6,12 +6,14 @@
 [circleci-logo]: https://circleci.com/gh/PicturePipe/renovate-config.svg?style=shield
 [renovate-logo]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg
 
-[Renovate](https://renovatebot.com/) preset config for PicturePipe projects.
+[Renovate config presets](https://docs.renovatebot.com/config-presets/) for PicturePipe projects.
 
 ## Usage
 
-To use this preset config add a `renovate.json ` file to the root of the repository with the
-following content:
+To use a config preset add a `renovate.json ` file to the root of the repository and reference the
+config preset to be used.
+
+This configuration will use the default preset (`default.json`):
 
 ```json
 {
@@ -19,9 +21,9 @@ following content:
 }
 ```
 
-## Config Validation
+## Config Preset Validation
 
-If the preset config has been changed it should be validated:
+After a config preset has been changed, it should be validated:
 
 ```console
 make validate

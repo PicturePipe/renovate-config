@@ -1,0 +1,32 @@
+{
+  "docker": {
+    "packageRules": [
+      {
+        "packageNames": ["circleci/python", "python"],
+        "allowedVersions": "<3"
+      },
+      {
+        "packageNames": ["memcached"],
+        "allowedVersions": "<1.5"
+      },
+      {
+        "packageNames": ["mysql"],
+        "allowedVersions": "<5.6"
+      },
+      {
+        "packageNames": ["rabbitmq"],
+        "allowedVersions": "<3.7"
+      },
+      {
+        "packageNames": ["redis"],
+        "allowedVersions": "<3.3"
+      }
+    ]
+  },
+  "npm": {
+    "enabled": false
+  },
+  "python": {
+    "enabled": false
+  }
+}

@@ -25,6 +25,8 @@ jobs:
       - validate-preset:
          config-file: /home/ubuntu/project/default.json
       - validate-preset:
+         config-file: /home/ubuntu/project/legacy.json
+      - validate-preset:
          config-file: /home/ubuntu/project/onsite-library.json
 
 workflows:

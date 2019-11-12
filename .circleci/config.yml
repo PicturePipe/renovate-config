@@ -24,6 +24,8 @@ jobs:
       - checkout
       - validate-preset:
          config-file: /home/ubuntu/project/default.json
+      - validate-preset:
+         config-file: /home/ubuntu/project/onsite-library.json
 
 workflows:
   version: 2

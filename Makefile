@@ -7,3 +7,5 @@ help:
 .PHONY: validate
 validate: ## Validate Renovate config presets
 	docker-compose run --rm validate
+	docker-compose run -e RENOVATE_CONFIG_FILE=/var/src/renovate-config/onsite-library.json --rm \
+		validate

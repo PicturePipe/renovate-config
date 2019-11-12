@@ -14,10 +14,6 @@
         "packageNames": ["circleci/python", "python"]
       },
       {
-        "allowedVersions": "<=1.7",
-        "packageNames": ["traefik"]
-      },
-      {
         "packagePatterns": ["circleci/.+"],
         "schedule": ["on Monday before 6:00"],
         "updateTypes": ["digest"]

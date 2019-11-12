@@ -21,6 +21,18 @@ This configuration will use the default preset (`default.json`):
 }
 ```
 
+More than one config preset can be referenced. This configuration will use `default.json` and
+`onsite-library.json`:
+
+```json
+{
+  "extends": [
+    "github>PicturePipe/renovate-config",
+    "github>PicturePipe/renovate-config:onsite-library"
+  ]
+}
+```
+
 ## Config Preset Validation
 
 After a config preset has been changed, it should be validated:

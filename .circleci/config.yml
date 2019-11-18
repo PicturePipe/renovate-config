@@ -1,16 +1,35 @@
-version: 2.0
+version: 2.1
+
+commands:
+  validate-preset:
+    description: >
+      Validate a Renovate config preset.
+    parameters:
+      config-file:
+        description: >
+          Full path to Renovate config preset file to validate.
+        type: string
+    steps:
+      - run:
+          command: /usr/src/app/bin/config-validator.js
+          environment:
+            RENOVATE_CONFIG_FILE: << parameters.config-file >>
+          name: Validate << parameters.config-file >>
 
 jobs:
   validate:
     docker:
       - image: renovate/renovate:19.66.15-slim@sha256:f3e9888652060a11f42c32b03f272bfd462877b4164e682e86ca2f87d85ea9d0
-        environment:
-          RENOVATE_CONFIG_FILE: ~/renovate.json
     steps:
       - checkout
-      - run:
-          command: /usr/src/app/bin/config-validator.js
-          name: Validate renovate.json
+      - validate-preset:
+         config-file: /home/ubuntu/project/default.json
+      - validate-preset:
+         config-file: /home/ubuntu/project/circleci-orb.json
+      - validate-preset:
+         config-file: /home/ubuntu/project/legacy.json
+      - validate-preset:
+         config-file: /home/ubuntu/project/onsite-library.json
 
 workflows:
   version: 2

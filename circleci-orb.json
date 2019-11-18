@@ -1,0 +1,5 @@
+{
+  "circleci": {
+    "fileMatch": ["(^|/).circleci/config.yml$", "(^|/)src/.+\\.yml$"]
+  }
+}

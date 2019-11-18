@@ -1,0 +1,23 @@
+{
+  "name": "renovate-config",
+  "version": "1.0.0",
+  "description": "Renovate config presets for PicturePipe projects.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PicturePipe/renovate-config.git"
+  },
+  "author": "reelport GmbH <development@picturepipe.com>",
+  "private": true,
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PicturePipe/renovate-config/issues"
+  },
+  "homepage": "https://github.com/PicturePipe/renovate-config#readme",
+  "devDependencies": {
+    "ajv-cli": "^3.0.0"
+  },
+  "dependencies": {},
+  "volta": {
+    "node": "12.13.0"
+  }
+}

@@ -19,7 +19,7 @@ commands:
 jobs:
   validate:
     docker:
-      - image: renovate/renovate:19.66.15-slim@sha256:f3e9888652060a11f42c32b03f272bfd462877b4164e682e86ca2f87d85ea9d0
+      - image: renovate/renovate:19.66.17-slim@sha256:780b10071b5174202e9fef53ea0404adaf1d0327fdfd06adbeb948f4f96a4669
     steps:
       - checkout
       - validate-preset:

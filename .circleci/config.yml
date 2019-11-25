@@ -15,6 +15,9 @@ commands:
           environment:
             RENOVATE_CONFIG_FILE: << parameters.config-file >>
           name: Validate << parameters.config-file >>
+      - run:
+          command: npx ajv -s renovate-schema.json -d << parameters.config-file >>
+          name: Validate << parameters.config-file >> against JSON schema
 
 jobs:
   validate:
@@ -22,10 +25,27 @@ jobs:
       - image: renovate/renovate:19.69.1-slim@sha256:35da815a7eff70f5015791969e6bd8fafc46056afa67bc1b5451c05fea70090f
     steps:
       - checkout
-      - validate-preset:
-         config-file: /home/ubuntu/project/default.json
+      - restore_cache:
+          keys:
+            - npm-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - npm-v1-{{ .Branch }}-
+            - npm-v1-
+          name: Restore npm cache
+      - run:
+          command: npm install
+          name: Install npm dependencies
+      - save_cache:
+          key: npm-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          name: Save npm cache
+          paths:
+            - ~/.npm
+      - run:
+          command: curl https://raw.githubusercontent.com/renovatebot/renovate/master/renovate-schema.json > renovate-schema.json
+          name: Fetch renovate configuration schema
       - validate-preset:
          config-file: /home/ubuntu/project/circleci-orb.json
+      - validate-preset:
+         config-file: /home/ubuntu/project/default.json
       - validate-preset:
          config-file: /home/ubuntu/project/legacy.json
       - validate-preset:

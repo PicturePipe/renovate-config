@@ -2,8 +2,9 @@
   "docker": {
     "packageRules": [
       {
+        "allowedVersions": "<3",
         "packageNames": ["circleci/python", "python"],
-        "allowedVersions": "<3"
+        "versionScheme": "pep440"
       },
       {
         "packageNames": ["memcached"],

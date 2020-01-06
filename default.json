@@ -11,7 +11,8 @@
       },
       {
         "allowedVersions": "<=3.8",
-        "packageNames": ["circleci/python", "python"]
+        "packageNames": ["circleci/python", "python"],
+        "versionScheme": "pep440"
       },
       {
         "packagePatterns": ["circleci/.+"],

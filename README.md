@@ -35,7 +35,15 @@ More than one config preset can be referenced. This configuration will use `defa
 
 ## Config Preset Validation
 
-After a config preset has been changed, it should be validated:
+After a config preset has been changed, it should be validated.
+
+First install the dependencies:
+
+```console
+npm install
+```
+
+Then validate all config presets:
 
 ```console
 make validate

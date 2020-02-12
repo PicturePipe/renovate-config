@@ -16,7 +16,7 @@ clean: ## Clean up previous state to perform full re-validation
 	rm -f .validated-*.json
 
 renovate-schema.json:
-	curl https://raw.githubusercontent.com/renovatebot/renovate/master/renovate-schema.json > "$@"
+	curl -fsSL https://docs.renovatebot.com/renovate-schema.json > "$@"
 
 .validated-%.json: %.json renovate-schema.json
 	docker-compose run \

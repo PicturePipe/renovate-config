@@ -40,7 +40,7 @@ jobs:
           paths:
             - ~/.npm
       - run:
-          command: curl https://raw.githubusercontent.com/renovatebot/renovate/master/renovate-schema.json > renovate-schema.json
+          command: curl -fsSL https://docs.renovatebot.com/renovate-schema.json > renovate-schema.json
           name: Fetch renovate configuration schema
       - validate-preset:
          config-file: /home/ubuntu/project/circleci-orb.json

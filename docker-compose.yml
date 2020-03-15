@@ -2,7 +2,7 @@ version: "3.5"
 
 services:
   validate:
-    image: renovate/renovate:19.171.0-slim@sha256:49bd9fe5f729cab774a8101f1f2214597dfc1196362cb1feb95ed7ed7c72e210
+    image: renovate/renovate:19.171.4-slim@sha256:12d05fea9b5bd0345d448cf5ac1aeedcad6dd70bc208e14595a98b951b9ee170
     environment:
       RENOVATE_CONFIG_FILE: /var/src/renovate-config/default.json
     entrypoint: bin/config-validator.js

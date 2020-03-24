@@ -24,6 +24,9 @@
       }
     ]
   },
+  "html": {
+    "enabled": false
+  },
   "npm": {
     "enabled": false
   },

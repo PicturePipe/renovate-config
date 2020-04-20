@@ -11,7 +11,7 @@ commands:
         type: string
     steps:
       - run:
-          command: /usr/src/app/bin/config-validator.js
+          command: /usr/src/app/node_modules/renovate/bin/config-validator.js
           environment:
             RENOVATE_CONFIG_FILE: << parameters.config-file >>
           name: Validate << parameters.config-file >>

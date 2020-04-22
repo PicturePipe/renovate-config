@@ -5,7 +5,7 @@ services:
     image: renovate/renovate:19.214.0-slim@sha256:ff7616a0df633d56040a170c9af07a9d84e6eb347fdefb356658ca346cce5364
     environment:
       RENOVATE_CONFIG_FILE: /var/src/renovate-config/default.json
-    entrypoint: bin/config-validator.js
+    entrypoint: node_modules/renovate/bin/config-validator.js
     volumes:
       - type: bind
         source: .

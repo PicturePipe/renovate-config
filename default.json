@@ -1,36 +1,41 @@
 {
-  "docker": {
-    "packageRules": [
-      {
-        "allowedVersions": "<13 || >13",
-        "packageNames": ["circleci/node", "node"]
-      },
-      {
-        "packagePatterns": ["circleci/.+"],
-        "recreateClosed": true
-      },
-      {
-        "allowedVersions": "<=3.8",
-        "packageNames": ["circleci/python", "python"],
-        "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?<prerelease>(a|b|rc)\\d+)?(-(?<compatibility>.*))?$"
-      },
-      {
-        "packagePatterns": ["circleci/.+"],
-        "schedule": ["on Monday after 3:00 before 6:00"],
-        "updateTypes": ["digest"]
-      }
-    ],
-    "pinDigests": true,
-    "pin": {
-      "automerge": true
-    }
-  },
   "extends": [
     "config:base",
     "default:automergeDigest",
     "default:semanticCommitsDisabled",
     "docker:enableMajor"
   ],
+  "packageRules": [
+    {
+      "allowedVersions": "<13 || >13",
+      "datasources": ["docker"],
+      "packageNames": ["circleci/node", "node"]
+    },
+    {
+      "packagePatterns": ["circleci/.+"],
+      "datasources": ["docker"],
+      "recreateClosed": true
+    },
+    {
+      "allowedVersions": "<=3.8",
+      "datasources": ["docker"],
+      "packageNames": ["circleci/python", "python"],
+      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?<prerelease>(a|b|rc)\\d+)?(-(?<compatibility>.*))?$"
+    },
+    {
+      "packagePatterns": ["circleci/.+"],
+      "datasources": ["docker"],
+      "schedule": ["on Monday after 3:00 before 6:00"],
+      "updateTypes": ["digest"]
+    },
+    {
+      "datasources": ["docker"],
+      "pin": {
+        "automerge": true
+      }
+    }
+  ],
+  "pinDigests": true,
   "labels": ["renovate"],
   "pip_requirements": {
     "fileMatch": ["(^|/)requirements(\/*[\\w-]*).(txt|pip)$"]

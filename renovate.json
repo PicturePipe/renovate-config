@@ -1,11 +1,10 @@
 {
-  "docker": {
-    "packageRules": [
-      {
-        "automerge": true,
-        "packageNames": ["renovate/renovate"]
-      }
-    ]
-  },
-  "extends": ["github>PicturePipe/renovate-config"]
+  "extends": ["github>PicturePipe/renovate-config"],
+  "packageRules": [
+    {
+      "automerge": true,
+      "datasources": ["docker"],
+      "packageNames": ["renovate/renovate"]
+    }
+  ]
 }

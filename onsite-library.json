@@ -1,12 +1,11 @@
 {
-  "docker": {
-    "packageRules": [
-      {
-        "allowedVersions": "<=1.7",
-        "packageNames": ["traefik"]
-      }
-    ]
-  },
+  "packageRules": [
+    {
+      "allowedVersions": "<=1.7",
+      "datasources": ["docker"],
+      "packageNames": ["traefik"]
+    }
+  ],
   "schedule": [
     "every weekday of February,March,September,October after 22:00",
     "every weekday of February,March,September,October before 6:00"

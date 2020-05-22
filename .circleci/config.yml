@@ -11,7 +11,7 @@ commands:
         type: string
     steps:
       - run:
-          command: /usr/src/app/node_modules/renovate/bin/config-validator.js
+          command: /usr/src/app/node_modules/renovate/dist/config-validator.js
           environment:
             RENOVATE_CONFIG_FILE: << parameters.config-file >>
           name: Validate << parameters.config-file >>
@@ -22,7 +22,7 @@ commands:
 jobs:
   validate:
     docker:
-      - image: renovate/renovate:19.239.11-slim@sha256:1d651999ebf7e6c02fdc729ffdae470e14acbd21bb39fc4aeef224bd098dbe85
+      - image: renovate/renovate:20.2.2-slim@sha256:2c324605ee4213ac1ca06a455723ce75e6e08d640672c6a62d566849babaf386
     steps:
       - checkout
       - restore_cache:

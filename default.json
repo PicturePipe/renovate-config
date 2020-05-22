@@ -12,8 +12,8 @@
       "packageNames": ["circleci/node", "node"]
     },
     {
-      "packagePatterns": ["circleci/.+"],
       "datasources": ["docker"],
+      "packagePatterns": ["circleci/.+"],
       "recreateClosed": true
     },
     {
@@ -23,16 +23,37 @@
       "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?<prerelease>(a|b|rc)\\d+)?(-(?<compatibility>.*))?$"
     },
     {
-      "packagePatterns": ["circleci/.+"],
       "datasources": ["docker"],
+      "packagePatterns": ["circleci/.+"],
       "schedule": ["on Monday after 3:00 before 6:00"],
       "updateTypes": ["digest"]
     },
     {
       "datasources": ["docker"],
+      "labels": ["renovate", "docker-update"],
       "pin": {
         "automerge": true
       }
+    },
+    {
+      "datasources": ["npm"],
+      "labels": ["renovate", "npm-update"]
+    },
+    {
+      "datasources": ["orb"],
+      "labels": ["renovate", "orb-update"]
+    },
+    {
+      "datasources": ["pypi"],
+      "labels": ["renovate", "pypi-update"]
+    },
+    {
+      "datasources": ["terraform-module", "terraform-provider"],
+      "labels": ["renovate", "terraform-update"]
+    },
+    {
+      "labels": ["renovate", "update-major"],
+      "updateTypes": ["major"]
     }
   ],
   "pinDigests": true,
@@ -44,5 +65,8 @@
     "every weekday after 22:00",
     "every weekday before 6:00"
   ],
-  "timezone": "Europe/Berlin"
+  "timezone": "Europe/Berlin",
+  "vulnerabilityAlerts": {
+    "labels": ["renovate", "security"]
+  }
 }

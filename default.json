@@ -5,6 +5,10 @@
     "default:semanticCommitsDisabled",
     "docker:enableMajor"
   ],
+  "labels": ["renovate"],
+  "npm": {
+    "postUpdateOptions": ["npmDedupe"]
+  },
   "packageRules": [
     {
       "allowedVersions": "<13 || >13",
@@ -57,7 +61,6 @@
     }
   ],
   "pinDigests": true,
-  "labels": ["renovate"],
   "pip_requirements": {
     "fileMatch": ["(^|/)requirements(\/*[\\w-]*).(txt|pip)$"]
   },

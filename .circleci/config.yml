@@ -22,7 +22,7 @@ commands:
 jobs:
   validate:
     docker:
-      - image: renovate/renovate:20.6.1-slim@sha256:3603d1b72d86a5fadecc5bee74898110d863c27f38d23f9c021851ba4e89b35b
+      - image: renovate/renovate:20.10.3-slim@sha256:3f032ba7cc2b0429e08926f0bd2d11706ece0bdf205246bf549f08c9b772127c
     steps:
       - checkout
       - restore_cache:

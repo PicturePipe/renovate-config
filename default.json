@@ -11,6 +11,11 @@
   },
   "packageRules": [
     {
+      "allowedVersions": "<1.19 || >1.19",
+      "datasources": ["docker"],
+      "packageNames": ["nginx"]
+    },
+    {
       "allowedVersions": "<13 || >13",
       "datasources": ["docker"],
       "packageNames": ["circleci/node", "node"]

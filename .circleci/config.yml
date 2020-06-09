@@ -1,58 +1,42 @@
 version: 2.1
 
-commands:
-  validate-preset:
-    description: >
-      Validate a Renovate config preset.
-    parameters:
-      config-file:
-        description: >
-          Full path to Renovate config preset file to validate.
-        type: string
-    steps:
-      - run:
-          command: /usr/src/app/node_modules/renovate/dist/config-validator.js
-          environment:
-            RENOVATE_CONFIG_FILE: << parameters.config-file >>
-          name: Validate << parameters.config-file >>
-      - run:
-          command: npx ajv --extend-refs=true -s renovate-schema.json -d << parameters.config-file >>
-          name: Validate << parameters.config-file >> against JSON schema
+orbs:
+  shellcheck: circleci/shellcheck@1.3.15
 
 jobs:
   validate:
     docker:
-      - image: renovate/renovate:21.6.0-slim@sha256:6f17871f4df39b8bc8e9982fa81f97a7a572cbbace976eb5d58ea4e221aae942
+      - image: circleci/node:12.16.2@sha256:7335cef9567718b3bfd03cdaaf60d457fd1ee39630d02fad3710f092e6cff072
     steps:
       - checkout
       - restore_cache:
           keys:
-            - npm-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
-            - npm-v1-{{ .Branch }}-
-            - npm-v1-
+            - npm-v2-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - npm-v2-{{ .Branch }}-
+            - npm-v2-
           name: Restore npm cache
       - run:
           command: npm install
           name: Install npm dependencies
       - save_cache:
-          key: npm-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: npm-v2-{{ .Branch }}-{{ checksum "package-lock.json" }}
           name: Save npm cache
           paths:
             - ~/.npm
       - run:
-          command: curl -fsSL https://docs.renovatebot.com/renovate-schema.json > renovate-schema.json
-          name: Fetch renovate configuration schema
-      - validate-preset:
-         config-file: /home/ubuntu/project/circleci-orb.json
-      - validate-preset:
-         config-file: /home/ubuntu/project/default.json
-      - validate-preset:
-         config-file: /home/ubuntu/project/legacy.json
-      - validate-preset:
-         config-file: /home/ubuntu/project/onsite-library.json
+          command: ./scripts/validate.sh
+          name: Validate Renovate config presets
 
 workflows:
   version: 2
   validate:
     jobs:
-      - validate
+      - validate:
+          requires:
+            - shellcheck/check
+      - shellcheck/check:
+          pre-steps:
+            - run:
+                command: |
+                  apk add --no-progress --update-cache git openssh-client
+                name: Install Git and SSH client

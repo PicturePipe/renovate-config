@@ -46,7 +46,7 @@ npm install
 Then validate all config presets:
 
 ```console
-make validate
+./scripts/validate.sh
 ```
 
 ## License

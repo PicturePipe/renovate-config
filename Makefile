@@ -23,7 +23,7 @@ renovate-schema.json:
 		-e "RENOVATE_CONFIG_FILE=/var/src/renovate-config/$<" \
 		--rm \
 		validate
-	npx ajv -s renovate-schema.json -d "$<"
+	npx ajv --extend-refs=true -s renovate-schema.json -d "$<"
 	touch "$@"
 
 .PHONY: validate

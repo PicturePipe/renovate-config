@@ -16,7 +16,7 @@ commands:
             RENOVATE_CONFIG_FILE: << parameters.config-file >>
           name: Validate << parameters.config-file >>
       - run:
-          command: npx ajv -s renovate-schema.json -d << parameters.config-file >>
+          command: npx ajv --extend-refs=true -s renovate-schema.json -d << parameters.config-file >>
           name: Validate << parameters.config-file >> against JSON schema
 
 jobs:

@@ -3,8 +3,8 @@
   "packageRules": [
     {
       "automerge": true,
-      "datasources": ["docker"],
-      "packageNames": ["renovate/renovate"]
+      "datasources": ["js"],
+      "packageNames": ["renovate"]
     }
   ]
 }

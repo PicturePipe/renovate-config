@@ -11,5 +11,4 @@
 /node_modules
 
 ### Validation ###
-.validated-*.json
 renovate-schema.json

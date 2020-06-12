@@ -3,7 +3,7 @@
   "packageRules": [
     {
       "automerge": true,
-      "datasources": ["js"],
+      "datasources": ["npm"],
       "packageNames": ["renovate"]
     }
   ]

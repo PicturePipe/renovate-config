@@ -6,7 +6,7 @@ orbs:
 jobs:
   validate:
     docker:
-      - image: circleci/node:12.16.2@sha256:7335cef9567718b3bfd03cdaaf60d457fd1ee39630d02fad3710f092e6cff072
+      - image: circleci/node:14.4.0@sha256:d592e0a96fe3cd36039c4233be1b51a091eacc2a34559258d9324f97b43ed018
     steps:
       - checkout
       - restore_cache:

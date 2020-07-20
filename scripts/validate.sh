@@ -12,7 +12,7 @@ set -o pipefail
 # Turn on traces, useful while debugging but commented out by default
 # set -o xtrace
 
-readonly PRESETS=(circleci-orb.json default.json legacy.json onsite-library.json)
+readonly PRESETS=(circleci-orb.json default.json legacy.json onsite-library.json poetry.json)
 readonly SCHEMA_URL=https://docs.renovatebot.com/renovate-schema.json
 
 echo "Downloading $SCHEMA_URL"

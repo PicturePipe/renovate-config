@@ -1,5 +1,4 @@
 {
-  "extends": ["github>PicturePipe/renovate-config"],
   "pip_requirements": {
     "enabled": false
   }

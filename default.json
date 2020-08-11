@@ -1,4 +1,5 @@
 {
+  "description": ["Default preset for all projects"],
   "extends": [
     "config:base",
     "default:automergeDigest",

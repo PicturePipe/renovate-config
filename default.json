@@ -75,6 +75,8 @@
   ],
   "timezone": "Europe/Berlin",
   "vulnerabilityAlerts": {
-    "labels": ["renovate", "security"]
+    "labels": ["renovate", "security"],
+    "reviewers": ["team:@PicturePipe/software-development"],
+    "schedule": ["at any time"]
   }
 }

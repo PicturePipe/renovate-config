@@ -1,4 +1,5 @@
 {
+  "description": ["Pin packages and set schedule for onsite-library"],
   "packageRules": [
     {
       "allowedVersions": "<=1.7",

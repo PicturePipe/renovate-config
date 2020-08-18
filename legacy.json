@@ -1,4 +1,5 @@
 {
+  "description": ["Pin packages and disable specific updates for legacy projects"],
   "packageRules": [
     {
       "allowedVersions": "<3",

@@ -1,6 +1,5 @@
 {
   "description": ["Disable pip_requirements manager in order to update only pyproject.toml"],
-  "extends": ["github>PicturePipe/renovate-config"],
   "pip_requirements": {
     "enabled": false
   }

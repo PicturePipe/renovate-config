@@ -1,4 +1,5 @@
 {
+  "description": ["Extend regex patterns to match CircleCI Orb source files"],
   "circleci": {
     "fileMatch": ["(^|/).circleci/config.yml$", "(^|/)src/.+\\.yml$"]
   }

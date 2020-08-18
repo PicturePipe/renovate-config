@@ -1,4 +1,5 @@
 {
+  "description": ["Disable pip_requirements manager in order to update only pyproject.toml"],
   "pip_requirements": {
     "enabled": false
   }

@@ -20,22 +20,22 @@
     {
       "allowedVersions": "<=12",
       "datasources": ["docker"],
-      "packageNames": ["circleci/node", "node"]
+      "packageNames": ["cimg/node", "circleci/node", "node"]
     },
     {
       "datasources": ["docker"],
-      "packagePatterns": ["circleci/.+"],
+      "packagePatterns": ["cimg/.+", "circleci/.+"],
       "recreateClosed": true
     },
     {
       "allowedVersions": "<=3.8",
       "datasources": ["docker"],
-      "packageNames": ["circleci/python", "python"],
+      "packageNames": ["cimg/python", "circleci/python", "python"],
       "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?<prerelease>(a|b|rc)\\d+)?(-(?<compatibility>.*))?$"
     },
     {
       "datasources": ["docker"],
-      "packagePatterns": ["circleci/.+"],
+      "packagePatterns": ["cimg/.+", "circleci/.+"],
       "schedule": ["on Monday after 3:00 before 6:00"],
       "updateTypes": ["digest"]
     },

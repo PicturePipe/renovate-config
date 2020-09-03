@@ -4,7 +4,7 @@
     {
       "allowedVersions": "<3",
       "datasources": ["docker"],
-      "packageNames": ["circleci/python", "python"],
+      "packageNames": ["cimg/python", "circleci/python", "python"],
       "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?<prerelease>(a|b|rc)\\d+)?(-(?<compatibility>.*))?$"
     },
     {

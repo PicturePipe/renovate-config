@@ -70,10 +70,6 @@
   "pip_requirements": {
     "fileMatch": ["(^|/)requirements(\/*[\\w-]*).(txt|pip)$"]
   },
-  "schedule": [
-    "every weekday after 22:00",
-    "every weekday before 6:00"
-  ],
   "timezone": "Europe/Berlin",
   "vulnerabilityAlerts": {
     "labels": ["renovate", "security"],

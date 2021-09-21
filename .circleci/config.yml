@@ -6,7 +6,7 @@ orbs:
 jobs:
   validate:
     docker:
-      - image: cimg/node:12.22.1@sha256:231a2f94286d3354f34890f0781a45b3979e365192c88445faec44501eeb9f06
+      - image: cimg/node:12.22.6@sha256:7e042f7ec331a92956dc7aa9939114b26872c80f4c02044949792bbe9a725148
     steps:
       - checkout
       - restore_cache:

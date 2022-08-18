@@ -15,7 +15,7 @@
   "homepage": "https://github.com/PicturePipe/renovate-config#readme",
   "devDependencies": {
     "ajv-cli": "3.3.0",
-    "renovate": "32.161.2"
+    "renovate": "32.163.0"
   },
   "dependencies": {},
   "volta": {
